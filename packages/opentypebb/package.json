@@ -5,12 +5,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
     },
     "./server": {
-      "import": "./dist/server.js",
-      "types": "./dist/server.d.ts"
+      "import": "./src/server.ts",
+      "types": "./src/server.ts"
     }
   },
   "files": [
@@ -22,7 +22,17 @@
     "directory": "packages/opentypebb"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./server": {
+        "import": "./dist/server.js",
+        "types": "./dist/server.d.ts"
+      }
+    }
   },
   "scripts": {
     "dev": "tsx src/server.ts",
